@@ -13,7 +13,7 @@ body {
   /* background: linear-gradient(to right bottom, #00b4db, #0083b0); */
   /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(./raingradient.jpg); */
-  background: linear-gradient(to right bottom, #000046, #1cb5e0);
+  background: linear-gradient(to right bottom, #ddd6f3, #faaca8);
   display: flex;
   flex-direction: column;
   /* gap: 1em; */
@@ -125,6 +125,7 @@ body {
   margin-left: 20px;
 }
 .weatherContent {
+  margin-top: 5em;
 }
 .welcomeAnderror {
   width: 50%;

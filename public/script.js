@@ -5,6 +5,7 @@ const currentWeather = (e) => {
   // Recieving weather data through api
   axios
     .get(`/weather/${cityName}`)
+
     .then(function (response) {
       //   if (response.status === 404) {
       //     document.querySelector(".welcomeAnderror").style.display = "block";
@@ -21,9 +22,15 @@ const currentWeather = (e) => {
       // document.querySelector("#openWeatherIcon").innerHTML = openWeatherIcon;
       // document.querySelector(".feelsLike").innerHTML =
       //   "Feels like " + Math.round(response.data.main.feels_like) + "°";
+
+      console.log(response.status);
       document.querySelector(".temperature").innerHTML =
         Math.round(response.data.temp) + "°C";
       document.querySelector(".cityName").innerHTML = response.data.name;
+      document.querySelector(".description").innerHTML =
+        response.data.description;
+      document.querySelector(".high").innerHTML = `H:${response.data.high}`;
+      document.querySelector(".low").innerHTML = `L:${response.data.low}`;
       document.querySelector("#humidityPercent").innerHTML =
         response.data.humidity + "%";
       document.querySelector("#windPercent").innerHTML =
@@ -31,6 +38,8 @@ const currentWeather = (e) => {
       document.querySelector("#visibilityValue").innerHTML =
         response.data.visibility + " km/h";
       cityName = "";
+      document.querySelector(".welcomeAnderror").style.display = "none";
+      document.querySelector(".weatherContent").style.display = "block";
       // Changing weather images dynamically
       // if (weatherCondition === "Clear") {
       //   weatherIcon.src = "images/clear.png";
@@ -96,11 +105,15 @@ const currentWeather = (e) => {
       // Changing body background color
 
       console.log(response.data);
+
       //   }
     })
     .catch(function (error) {
       // handle error
-      console.log(error.data);
+      console.log(error);
+      document.querySelector(".weatherContent").style.display = "none";
+      document.querySelector(".welcomeAnderror").style.display = "block";
+      document.querySelector(".welcomeAnderror").innerHTML = error.message;
     });
 };
 const form = document.querySelector(".form");

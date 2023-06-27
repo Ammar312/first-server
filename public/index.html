@@ -30,53 +30,57 @@
         </div>
       </form>
     </div>
-    <audio autoplay src="" id="audio"></audio>
-    <!-- <div class="welcomeAnderror">
-      <p>Current Weather<br />Application</p>
-      <div>Enter the city to check weather</div>
-    </div> -->
+
+    <div class="welcomeAnderror">
+      <p>Weather<br />App</p>
+      <!-- <div>Enter the city to check weather</div> -->
+    </div>
     <div class="weatherContent">
-      <!-- <div class="weatherIcon">
-        <img class="conditionImg" src="" alt="" />
-        <div class="iconDetail">
-          <div class="iconAndDescription">
-            <p class="description">Clear</p>
-            <p id="openWeatherIcon"><img src="" /></p>
-          </div>
-          <p class="feelsLike">22</p>
+      <section class="upper">
+        <h1 class="cityName"></h1>
+        <h1 class="temperature">°C</h1>
+        <div class="description">Mostly Clear</div>
+        <div class="highAndLow">
+          <span class="high">H:34</span>
+          <span class="low">L:18</span>
         </div>
-      </div> -->
-      <h1 class="temperature">°C</h1>
-      <h1 class="cityName"></h1>
-      <div class="weatherDetail">
-        <div class="block">
-          <div>
-            <img src="./images/humidity.png" class="Img" alt="" />
+      </section>
+      <section class="detailSec">
+        <div class="weatherDetail">
+          <div class="block">
+            <div>
+              <img
+                src="./images/humidity.png"
+                class="Img"
+                id="humidityId"
+                alt=""
+              />
+            </div>
+            <div class="Text">
+              <p id="humidity">Humidity</p>
+              <p id="humidityPercent"></p>
+            </div>
           </div>
-          <div class="Text">
-            <p id="humidity">Humidity</p>
-            <p id="humidityPercent"></p>
+          <div class="block">
+            <div>
+              <img src="./images/wind.png" class="Img" alt="" />
+            </div>
+            <div class="Text">
+              <p id="wind">Wind</p>
+              <p id="windPercent"></p>
+            </div>
+          </div>
+          <div class="block">
+            <div class="visibilityImg">
+              <i class="bi bi-eye"></i>
+            </div>
+            <div class="Text">
+              <p id="visibility">Visibility</p>
+              <p id="visibilityValue"></p>
+            </div>
           </div>
         </div>
-        <div class="block">
-          <div>
-            <img src="./images/wind.png" class="Img" alt="" />
-          </div>
-          <div class="Text">
-            <p id="wind">Wind</p>
-            <p id="windPercent"></p>
-          </div>
-        </div>
-        <div class="block">
-          <div class="visibilityImg">
-            <i class="bi bi-eye"></i>
-          </div>
-          <div class="Text">
-            <p id="visibility">Visibility</p>
-            <p id="visibilityValue"></p>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

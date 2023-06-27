@@ -13,13 +13,19 @@ app.get("/weather/:cityName", (req, res) => {
       humidity: 56,
       wind: 8,
       visibility: 5,
+      description: "mostly clear",
+      high: 32,
+      low: 25,
     },
     london: {
       name: "london",
-      temp: 5,
+      temp: 15,
       humidity: 56,
       wind: 6,
       visibility: 2,
+      description: "broken clouds",
+      high: 22,
+      low: 8,
     },
   };
   const userInputCityName = req.params.cityName.toLowerCase();
